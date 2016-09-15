@@ -1,0 +1,33 @@
+<img ng-src="{{$ctrl.mainImageUrl}}">
+
+<h1>{{$ctrl.phone.name}}</h1>
+
+<p>{{$ctrl.phone.description}}</p>
+
+<ul>
+	<li ng-repeat="img in $ctrl.phone.images">
+		<img ng-src="{{img}}" ng-click="$ctrl.setImage(img)">
+	</li>
+</ul>
+
+<ul>
+	<li>
+		<span>Availability and Networks</span>
+		<dl>
+			<dt>Availability</dt>
+			<dd ng-repeat="availability in $ctrl.phone.availability">{{availability}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Additional Features</span>
+		<dd>{{$ctrl.phone.additionalFeatures}}</dd>
+	</li>
+	<li>
+		<dl>
+		  <dt>Infrared</dt>
+		  <dd>{{$ctrl.phone.connectivity.infrared | checkmark}}</dd>
+		  <dt>GPS</dt>
+		  <dd>{{$ctrl.phone.connectivity.gps | checkmark}}</dd>
+		</dl>
+	</li>
+</ul>
